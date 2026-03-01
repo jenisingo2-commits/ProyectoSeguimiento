@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
+from .models import Empleado
+from django.shortcuts import render
 
 def home(request):
     return render(request, "home.html")
@@ -51,3 +53,10 @@ def registro(request):
 def logout_view(request):
     logout(request)
     return redirect("login")
+
+@login_required
+def dashboard(request):
+    total_empleados = Empleado.objects.count()
+    return render(request, 'dashboard.html', {
+        'total_empleados': total_empleados
+    })
