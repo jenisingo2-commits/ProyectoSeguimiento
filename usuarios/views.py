@@ -60,3 +60,4 @@ def dashboard(request):
     return render(request, 'dashboard.html', {
         'total_empleados': total_empleados
     })
+    return render(request, 'usuarios/base.html') 
