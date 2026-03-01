@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Panel de Control</h2>
+
+<h2>Panel de Control</h2>
+
+<div style="border:1px solid #ccc; padding:20px; width:300px; text-align:center;">
+    <h3>Total de Empleados</h3>
+    <h1>{{ total_empleados }}</h1>
+</div>
+
+<a href="{% url 'logout' %}">Cerrar sesión</a>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body text-center">
+    <h5 class="card-title">Total de Empleados</h5>
+    <h2>{{ total_empleados }}</h2>
+  </div>
+</div>
+
+{% endblock %}
